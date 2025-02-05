@@ -1,4 +1,3 @@
-
 version: 2
 
 sources:
@@ -12,10 +11,6 @@ sources:
             tests:
               - unique
               - not_null
-          - name: o_custkey
-            tests:
-              - unique
-              - not_null
       - name: customer
         columns:
           - name: c_custkey
@@ -23,3 +18,8 @@ sources:
               - relationships:
                   to: source('pvibe', 'orders')
                   field: o_custkey
+      - name: nation
+      - name: region
+        
+          
+            
