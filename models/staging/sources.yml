@@ -1,0 +1,25 @@
+version: 2
+
+sources:
+  - name: pvibe
+    database: snowflake_sample_data
+    schema: tpch_sf1
+    tables:
+      - name: orders
+        columns:
+          - name: o_orderkey
+            tests:
+              - unique
+              - not_null
+      - name: customer
+        columns:
+          - name: c_custkey
+            tests:
+              - relationships:
+                  to: source('pvibe', 'orders')
+                  field: o_custkey
+      - name: nation
+      - name: region
+        
+          
+            
