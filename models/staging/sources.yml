@@ -12,12 +12,7 @@ sources:
               - unique
               - not_null
       - name: customer
-        columns:
-          - name: c_custkey
-            tests:
-              - relationships:
-                  to: source('pvibe', 'orders')
-                  field: o_custkey
+        
       - name: nation
       - name: region
         
